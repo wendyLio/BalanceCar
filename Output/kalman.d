@@ -1,0 +1,17 @@
+..\..\output\kalman.o: ..\..\User\kalman\kalman.c
+..\..\output\kalman.o: ..\..\User\kalman\kalman.h
+..\..\output\kalman.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\kalman.o: ..\..\Libraries\CMSIS\core_cm3.h
+..\..\output\kalman.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\kalman.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
+..\..\output\kalman.o: ..\..\User\stm32f10x_conf.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\kalman.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\misc.h
+..\..\output\kalman.o: ..\..\User\mpu6050\bsp_mpu6050.h
+..\..\output\kalman.o: ..\..\User\include.h
+..\..\output\kalman.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
