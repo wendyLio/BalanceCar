@@ -58,3 +58,8 @@ kalman提供姿态解算算法
 mpu6050相关结构体移入attitude_computation.c
 MPU6050_STRUCT mpu6050;
 MPU6050_OUTPUT_STRUCT mpu6050_output;
+
+9.27
+关于MPU6050模块：
+MPU6050模块的AD0是内部通过一个电阻接GND。
+悬空相当于低电平。接VCC能够得到高电平，不会造成VCC与GND直连。
