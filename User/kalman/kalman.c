@@ -42,15 +42,21 @@ void Kanman_Init(KALMAN_STRUCT * kalman)
 
 void Kanman_Filter(KALMAN_STRUCT * kalman,float Gyro,float Accel,u32 dt)	//GyroÍÓÂİÒÇµÄ²âÁ¿Öµ  |  Accel¼ÓËÙ¶È¼ÆµÄ½Ç¶È¼Æ  |  dtµÄÊ±¼ä¿¼ÂÇÓÃĞ¡Êı »ò ¸üĞ¡µÄ·Ö¶È±íÊ¾
 {
+	float dt_f;
+	
+	//°ÑdtÕâ¸öµ¥Î»ÊÇmsµÄu32ĞÍ±äÁ¿ÀïµÄÖµ×ª»»ÎªfloatĞÍµÄÒÔÃëÎªµ¥Î»µÄÖµ
+	dt_f = (float)dt;
+	dt_f = dt_f / 1000;
+	
 	//xÖáÖ¸ÏòÇ°£¬yÖáÖ¸Ïò×óµÄ×ø±êÏµ   ÒªËã¸©Ñö½Ç
 	//ÄÇÃ´ÊäÈëµÄÓ¦¸ÃÊÇyÖáµÄ½ÇËÙ¶È£¨Gyro£©ºÍyÖáµÄÇã½Ç¼ÓËÙ¶È¼Æ¹À¼ÆÖµ
 	//×ø±êÏµÇé¿ö´ó¸ÅÊÇÕâÑù
 	
 	
-	//½Ç¶È²âÁ¿Ä£ĞÍ·½³Ì ½Ç¶È¹À¼ÆÖµ=ÉÏÒ»´Î×îÓĞ½Ç¶È+£¨½ÇËÙ¶È-ÉÏÒ»´ÎµÄ×îÓÅÁãÆ®£©*dt
+	//½Ç¶È²âÁ¿Ä£ĞÍ·½³Ì ½Ç¶È¹À¼ÆÖµ=ÉÏÒ»´Î×îÓĞ½Ç¶È+£¨½ÇËÙ¶È-ÉÏÒ»´ÎµÄ×îÓÅÁãÆ®£©*dt_f
 	//¾ÍÆ¯ÒÆÀ´Ëµ£¬ÈÏÎªÃ¿´Î¶¼ÊÇÏàÍ¬µÄQ_bias=Q_bias
 	//¹À¼Æ½Ç¶È
-	(*kalman).Angel += (Gyro - (*kalman).Q_Bias) * dt;
+	(*kalman).Angel += (Gyro - (*kalman).Q_Bias) * dt_f;
 	
 	//¼ÆËã¹À¼ÆÄ£ĞÍµÄ·½²î
 	(*kalman).Pdot[0] = (*kalman).Q_Angle - (*kalman).PP[0][1] - (*kalman).PP[1][0];
@@ -58,10 +64,10 @@ void Kanman_Filter(KALMAN_STRUCT * kalman,float Gyro,float Accel,u32 dt)	//GyroÍ
 	(*kalman).Pdot[2] = -(*kalman).PP[1][1];
 	(*kalman).Pdot[3] = (*kalman).Q_Gyro;
 	
-	(*kalman).PP[0][0] += (*kalman).Pdot[0] * dt;
-	(*kalman).PP[0][1] += (*kalman).Pdot[1] * dt;
-	(*kalman).PP[1][0] += (*kalman).Pdot[2] * dt;
-	(*kalman).PP[1][1] += (*kalman).Pdot[3] * dt;
+	(*kalman).PP[0][0] += (*kalman).Pdot[0] * dt_f;
+	(*kalman).PP[0][1] += (*kalman).Pdot[1] * dt_f;
+	(*kalman).PP[1][0] += (*kalman).Pdot[2] * dt_f;
+	(*kalman).PP[1][1] += (*kalman).Pdot[3] * dt_f;
 	
 	//¼ÆËã¿¨¶ûÂüÔöÒæ
 	(*kalman).PCt_0 = (*kalman).C_0 * (*kalman).PP[0][0];	//¾ØÕó³Ë·¨µÄÖĞ¼ä±äÁ¿

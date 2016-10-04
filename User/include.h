@@ -26,4 +26,11 @@ typedef struct
 	float z;
 }xyz_f_t;
 
+typedef struct 
+{
+	s32 x;
+	s32 y;
+	s32 z;
+}xyz_s32_t;
+
 #endif /* __INCLUDE_H */

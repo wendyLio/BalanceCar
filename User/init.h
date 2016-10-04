@@ -10,6 +10,8 @@
 #include "scheduler.h"
 #include "bsp_mpu6050.h"
 #include "mpu6050_measure.h"
+#include "attitude_computation.h"
+#include "control.h"
 
 u8 All_Init(void);
 

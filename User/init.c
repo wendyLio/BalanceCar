@@ -20,5 +20,9 @@ u8 All_Init(void)
 	init_error = mpu6050_init(5);	//MPU6050的初始化，要放在systick调度的后面，因为其中调用了延时函数
 									//此函数的入参是对mpu6050内部数字低通滤波器的频带宽度设置，输入0代表关闭内部低通滤波器
 	
+	Attitude_Init();	//初始化姿态相关变量
+	
+	Balance_Init();		//自稳变量初始化
+	
 	return init_error;
 }

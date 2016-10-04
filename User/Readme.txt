@@ -63,3 +63,43 @@ MPU6050_OUTPUT_STRUCT mpu6050_output;
 关于MPU6050模块：
 MPU6050模块的AD0是内部通过一个电阻接GND。
 悬空相当于低电平。接VCC能够得到高电平，不会造成VCC与GND直连。
+
+10.3
+工程更新为C8和ZE双编译版本。
+对时间单位问题的解决：
+由于使用的芯片是F103，理论上应该尽量减少float型变量的操作，所以在主函数内的时间参数均设定为
+以u32型，毫秒为单位的变量
+也就是说，1s在变量中被表示为 u32 dt = 1000;	//1000ms
+对于kalman等需要float类型时间的函数，采用在函数内部手动转换的方式解决。
+
+将attitude computation.c 和 attitude computation.h 改名为 attitude_computation.c 和 attitude_computation.h
+
+参数类型选择问题：
+u32 = uint32_t = typedef unsigned int
+s32 = int32_t  = typedef   signed int
+
+参考匿名飞控，决定把角度和角速度值用float型变量表示。在pid算法里面用p值调整放大倍数。
+如果用s32类型表示，在乘p值的时候就有可能造成变量整体过大，有可能接近变量最大值。所以先用float，然后用p的倍率放大。
+
+
+更新Accel_To_Angle函数
+
+旧函数：
+void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
+{
+//	xyz_f_t Angle_t;	//用加速度计数据计算角度的估价值
+	
+	Angle_t->z = atan2(Accel->y,Accel->x)*180.0/PI;	//计算倾角，并转化为弧度制，取值范围0-2π，这个地方转化为弧度制好像很没用，还有点捣乱
+	Angle_t->x = atan2(Accel->z,Accel->y)*180.0/PI;
+	Angle_t->y = atan2(Accel->x,Accel->z)*180.0/PI;
+	
+//	return Angle_t;
+}
+
+新函数：
+void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
+{
+	Angle_t->z = atan2(Accel->y,Accel->x);	//计算倾角
+	Angle_t->x = atan2(Accel->z,Accel->y);
+	Angle_t->y = atan2(Accel->x,Accel->z);
+}

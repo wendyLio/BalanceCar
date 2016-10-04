@@ -49,6 +49,7 @@ void mpu6050_6axis_Prepare(MPU6050_STRUCT * original,MPU6050_OUTPUT_STRUCT * out
 //******************************滑动滤波结束********************************************************
 	
 	//进行单位转换（除以2^16,再乘以最大量程）
+	//所以换算后的单位应该是 cm/s2 和 °/s
 	output->Acc_f_g.x  = output->Acc_f.x * To_CM_S2;	//加速度度最大量程 +-8G
 	output->Acc_f_g.y  = output->Acc_f.y * To_CM_S2;	//读取数据位数 16
 	output->Acc_f_g.z  = output->Acc_f.z * To_CM_S2;
@@ -69,9 +70,9 @@ void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
 {
 //	xyz_f_t Angle_t;	//用加速度计数据计算角度的估价值
 	
-	Angle_t->z = atan2(Accel->y,Accel->x)*180/PI;                 //计算倾角
-	Angle_t->x = atan2(Accel->z,Accel->y)*180/PI;
-	Angle_t->y = atan2(Accel->x,Accel->z)*180/PI;
+	Angle_t->z = atan2(Accel->y,Accel->x);	//计算倾角
+	Angle_t->x = atan2(Accel->z,Accel->y);
+	Angle_t->y = atan2(Accel->x,Accel->z);
 	
 //	return Angle_t;
 }

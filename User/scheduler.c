@@ -1,4 +1,6 @@
 #include "scheduler.h"
+#include "attitude_computation.h"
+#include "stdio.h"
 
 void Duty_1ms(void);							//周期1ms的任务
 void Duty_2ms(void);
@@ -106,12 +108,17 @@ void Duty_1ms(void)
 
 void Duty_2ms(void)
 {
-	
+	u32 T = 2;
+	Attitude_sensor_Read(T);
 }
 
 void Duty_5ms(void)
 {
+	u32 T = 5;
+	Attitude_sensor_Update(T);
 	
+	//测试输出，测试数据采样和运算结果的正确性
+	printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
 }
 
 void Duty_10ms(void)
@@ -128,4 +135,5 @@ void Duty_50ms(void)
 {
 	
 }
+
 

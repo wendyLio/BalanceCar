@@ -21,3 +21,6 @@
 ..\..\output\init.o: ..\..\User\mpu6050\bsp_mpu6050.h
 ..\..\output\init.o: ..\..\User\mpu6050_measure.h
 ..\..\output\init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\init.o: ..\..\User\attitude_computation.h
+..\..\output\init.o: ..\..\User\kalman\kalman.h
+..\..\output\init.o: ..\..\User\control.h
