@@ -433,6 +433,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\control.c</FilePath>
             </File>
+            <File>
+              <FileName>data_transfer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\data_transfer.c</FilePath>
+            </File>
+            <File>
+              <FileName>movement_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\movement_control.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1072,6 +1082,16 @@
               <FileName>control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\control.c</FilePath>
+            </File>
+            <File>
+              <FileName>data_transfer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\data_transfer.c</FilePath>
+            </File>
+            <File>
+              <FileName>movement_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\movement_control.c</FilePath>
             </File>
           </Files>
         </Group>

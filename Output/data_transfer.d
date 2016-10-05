@@ -1,0 +1,15 @@
+..\..\output\data_transfer.o: ..\..\User\data_transfer.c
+..\..\output\data_transfer.o: ..\..\User\data_transfer.h
+..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\core_cm3.h
+..\..\output\data_transfer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
+..\..\output\data_transfer.o: ..\..\User\stm32f10x_conf.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\misc.h
+..\..\output\data_transfer.o: ..\..\User\control.h

@@ -18,4 +18,6 @@
 ..\..\output\scheduler.o: ..\..\User\mpu6050_measure.h
 ..\..\output\scheduler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\..\output\scheduler.o: ..\..\User\kalman\kalman.h
+..\..\output\scheduler.o: ..\..\User\control.h
+..\..\output\scheduler.o: ..\..\User\movement_control.h
 ..\..\output\scheduler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

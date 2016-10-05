@@ -13,4 +13,3 @@
 ..\..\output\control.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\control.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\control.o: ..\..\User\include.h
-..\..\output\control.o: ..\..\User\pwm_out\bsp_pwm_out.h

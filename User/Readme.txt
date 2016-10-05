@@ -103,3 +103,31 @@ void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
 	Angle_t->x = atan2(Accel->z,Accel->y);
 	Angle_t->y = atan2(Accel->x,Accel->z);
 }
+
+10.4
+更新了bsp_pwm_out中的速度输入函数。
+完善了schedule.c。
+
+建立data_transfer.c和data_transfer.h。
+在usart1的接受中断里加入接受中断处理函数，
+后续准备在接收中断中做命令识别，支持串口调节pid。
+
+想起来了，uint8_t中的t是typedef的意思。
+
+10.5
+增加movement_control文件，形成集 电机驱动 和 速度采集 为一体的硬件抽象层
+
+完成协议及其解析函数
+/*
+	长度：		7 Byte
+
+	Byte1	包头		0xAA
+	Byte2	识别符		1~255
+	Byte3	内容1
+	Byte4	内容2
+	Byte5	内容3
+	Byte6	内容4
+	Byte7	包尾		0xBB
+	
+*/
+

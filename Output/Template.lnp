@@ -8,6 +8,8 @@
 "..\..\output\time.o"
 "..\..\output\attitude_computation.o"
 "..\..\output\control.o"
+"..\..\output\data_transfer.o"
+"..\..\output\movement_control.o"
 "..\..\output\bsp_usart1.o"
 "..\..\output\bsp_systick.o"
 "..\..\output\bsp_i2c.o"

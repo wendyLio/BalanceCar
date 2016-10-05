@@ -1,5 +1,7 @@
 #include "scheduler.h"
 #include "attitude_computation.h"
+#include "control.h"
+#include "movement_control.h"
 #include "stdio.h"
 
 void Duty_1ms(void);							//周期1ms的任务
@@ -119,6 +121,12 @@ void Duty_5ms(void)
 	
 	//测试输出，测试数据采样和运算结果的正确性
 	printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
+	
+	//在理论上，PID的算法调用频率应该小于等于传感器更新速率
+	Balance_Control(Angle.y,Gyro.y,0.0);
+	
+	//将控制输出数值赋值给电机驱动函数
+	Speed_InPut(Control_Out_Left,Control_Out_Right);
 }
 
 void Duty_10ms(void)

@@ -7,6 +7,7 @@
   */
   
 #include "bsp_usart1.h"
+#include "data_transfer.h"
 
  /**
   * @brief  USART1 GPIO 配置,工作模式配置。9600 8-N-1
@@ -91,9 +92,12 @@ void USART1_IRQHandler(void)
 	
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
 	{ 	
-	    //ch = USART1->DR;
-			ch = USART_ReceiveData(USART1);
-	  	printf( "%c", ch );    //将接受到的数据直接返回打印
+//	    //ch = USART1->DR;
+//			ch = USART_ReceiveData(USART1);
+//	  	printf( "%c", ch );    //将接受到的数据直接返回打印
+		
+		ch = USART_ReceiveData(USART1);
+		Usart1_Receive_Handle(ch);
 	} 
 }
 

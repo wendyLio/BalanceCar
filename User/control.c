@@ -1,8 +1,21 @@
 #include "control.h"
 #include "include.h"
-#include "bsp_pwm_out.h"
+
+/*
+ * 说明
+ * control.c是针对平衡小车制作的试验性姿态控制代码文件
+ * 本文件的调用方式为：
+ * 1.调用其中函数
+ * 2.用extern中的变量访问数据输出
+ * 3.控制所需入参在函数调用时传入
+ * 
+ * 本文件中的函数没有严格的使用指针传递数据，也没有对所有轴的控制都加以处理。
+ * 所有的代码都是试验性的，稍显混乱，在正式版代码中会更正。
+ * 
+*/
 
 u32 kp,kd;
+s32 Control_Out_Left,Control_Out_Right;
 
 /*
  * 姿态控制用变量初始化
@@ -41,8 +54,9 @@ void Balance_Control(float Angle_y,float Gyro_y,float Expect_Angle_y)
 	//PD控制，由于角速度是角度的一阶倒数，所以满足pid公式中d项要求，不用除dt，直接乘dt就行了。
 	balance_y = kp * error_y + kd * Gyro_y;	//这个d前面的符号的正负也以后再说
 	
-	PWM_Out(balance_y,balance_y);
-	
+	//赋值给控制输出变量
+	Control_Out_Left = balance_y;
+	Control_Out_Right = balance_y;
 }
 
 

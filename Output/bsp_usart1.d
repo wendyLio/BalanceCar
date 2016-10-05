@@ -13,3 +13,4 @@
 ..\..\output\bsp_usart1.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\bsp_usart1.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_usart1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\bsp_usart1.o: ..\..\User\data_transfer.h
