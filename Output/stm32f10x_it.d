@@ -14,3 +14,4 @@
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\stm32f10x_it.o: ..\..\User\scheduler.h
+..\..\output\stm32f10x_it.o: ..\..\User\time.h

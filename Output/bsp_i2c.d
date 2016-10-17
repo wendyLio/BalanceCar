@@ -12,3 +12,4 @@
 ..\..\output\bsp_i2c.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
 ..\..\output\bsp_i2c.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\bsp_i2c.o: ..\..\Libraries\FWlib\inc\misc.h
+..\..\output\bsp_i2c.o: ..\..\User\time.h

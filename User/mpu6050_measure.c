@@ -70,9 +70,9 @@ void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
 {
 //	xyz_f_t Angle_t;	//用加速度计数据计算角度的估价值
 	
-	Angle_t->z = atan2(Accel->y,Accel->x);	//计算倾角
-	Angle_t->x = atan2(Accel->z,Accel->y);
-	Angle_t->y = atan2(Accel->x,Accel->z);
+	Angle_t->z = atan2(Accel->y,Accel->x)*180/PI;	//计算倾角
+	Angle_t->x = atan2(Accel->z,Accel->y)*180/PI;
+	Angle_t->y = atan2(Accel->x,Accel->z)*180/PI;
 	
 //	return Angle_t;
 }

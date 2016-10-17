@@ -398,11 +398,6 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\stm32f10x_it.c</FilePath>
             </File>
-            <File>
-              <FileName>init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\init.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -443,6 +438,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\movement_control.c</FilePath>
             </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\init.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -459,11 +459,6 @@
               <FilePath>..\..\User\SysTick\bsp_SysTick.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\i2c\bsp_i2c.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\mpu6050\bsp_mpu6050.c</FilePath>
@@ -477,6 +472,11 @@
               <FileName>bsp_pwm_out.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\pwm_out\bsp_pwm_out.c</FilePath>
+            </File>
+            <File>
+              <FileName>IOI2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -648,6 +648,11 @@
               <FileType>5</FileType>
               <FilePath>..\..\User\Readme.txt</FilePath>
             </File>
+            <File>
+              <FileName>cache.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\cache.txt</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -785,8 +790,8 @@
             <DriverSelection>4099</DriverSelection>
           </Flash1>
           <bUseTDR>0</bUseTDR>
-          <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash2>Segger\JL2CM3.dll</Flash2>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -984,7 +989,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\i2c;..\..\User\mpu6050;..\..\User\kalman;..\..\User\encoder;..\..\User\pwm_out</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\mpu6050;..\..\User\kalman;..\..\User\encoder;..\..\User\pwm_out;..\..\User\IIC</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1048,11 +1053,6 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\stm32f10x_it.c</FilePath>
             </File>
-            <File>
-              <FileName>init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\init.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1093,6 +1093,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\movement_control.c</FilePath>
             </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\init.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1109,11 +1114,6 @@
               <FilePath>..\..\User\SysTick\bsp_SysTick.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\i2c\bsp_i2c.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\mpu6050\bsp_mpu6050.c</FilePath>
@@ -1127,6 +1127,11 @@
               <FileName>bsp_pwm_out.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\pwm_out\bsp_pwm_out.c</FilePath>
+            </File>
+            <File>
+              <FileName>IOI2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1297,6 +1302,11 @@
               <FileName>Readme.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\User\Readme.txt</FilePath>
+            </File>
+            <File>
+              <FileName>cache.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\cache.txt</FilePath>
             </File>
           </Files>
         </Group>

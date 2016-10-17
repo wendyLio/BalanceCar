@@ -13,5 +13,6 @@
 ..\..\output\bsp_mpu6050.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\bsp_mpu6050.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_mpu6050.o: ..\..\User\include.h
-..\..\output\bsp_mpu6050.o: ..\..\User\i2c\bsp_i2c.h
 ..\..\output\bsp_mpu6050.o: ..\..\User\scheduler.h
+..\..\output\bsp_mpu6050.o: ..\..\User\time.h
+..\..\output\bsp_mpu6050.o: ..\..\User\IIC\ioi2c.h

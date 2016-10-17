@@ -131,3 +131,60 @@ void Accel_To_Angle(xyz_f_t * Accel,xyz_f_t * Angle_t)
 	
 */
 
+2016.10.14
+对scheduler.c里面的delay_ms相关逻辑进行改动
+	if(delay_ms_counter != 0)
+改为
+	if(delay_ms_counter >= 0)
+	
+删除：	
+//这句话应该不会起作用，算是增强鲁棒性吧
+//如果delay_ms_counter<0了，整个延时逻辑就出大问题了
+if(delay_ms_counter < 0)
+	delay_ms_counter = 0;
+	
+bsp_i2c.c中I2C_1_Init()里加入
+
+//**************************************************************************
+//新加入部分，用于释放I2C总线
+//**************************************************************************
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_6;//IIC??PB6--SCL,PB7--SDA
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;	   //复用输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	   //50MHZ
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	for(i=0;i<10;i++)
+	{
+	GPIO_SetBits(GPIOB,GPIO_Pin_6);
+	delay_us(100);
+	GPIO_ResetBits(GPIOB,GPIO_Pin_6);
+	delay_us(100);
+	}
+	
+//**************************************************************************
+//结束
+//**************************************************************************
+
+和
+
+//百度文库里面的一片文档说要使能应答功能
+I2C_AcknowledgeConfig(I2C1, ENABLE);//使能应答功能
+
+发现加入的代码都没有用，好像还带来了新问题
+
+在IICwriteBit里面加了一个100us的delay就好了
+void IICwriteBit(u8 dev, u8 reg, u8 bitNum, u8 data){
+	u8 b;
+	Delay_Us(100);		//加入了100us延迟
+	IIC_Read_nByte(dev, reg, 1, &b);
+	b = (data != 0) ? (b | (1 << bitNum)) : (b & ~(1 << bitNum));
+	mpu6050_ok = !( IIC_Write_1Byte(dev, reg, b) );	//IIC_Write_1Byte正常情况返回0，经过去反mpu6050_ok = 1
+}
+
+
+10.17
+
+改用软件I2C
+
+Accel_To_Angle内改用角度制
+

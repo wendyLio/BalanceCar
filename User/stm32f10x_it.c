@@ -27,6 +27,7 @@
 #include "stm32f10x_it.h"
 #include <stdio.h>
 #include "scheduler.h"
+#include "time.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -140,6 +141,14 @@ void SysTick_Handler(void)
 {
 	Loop_check();	//循环控制函数，调用周期1ms
 }
+
+
+void  TIM4_IRQHandler (void)
+{
+	 	 TIM_ClearFlag(TIM7, TIM_FLAG_Update);	
+	     go_onflag=1;
+}
+
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */

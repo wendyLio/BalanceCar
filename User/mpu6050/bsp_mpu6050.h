@@ -4,43 +4,40 @@
 #include "stm32f10x.h"
 #include "include.h"
 
+//******************结构体*******************************
 typedef struct 
 {
 	u8 mpu6050_buffer[14];
-	
 	xyz_s16_t Acc_I16;	//加速度输入原始值
 	xyz_s16_t Gyro_I16;	//角速度输入原始值
-	
 	s16 Tempreature;
-	
 }MPU6050_STRUCT;
 
+//********************变量****************************
 extern MPU6050_STRUCT mpu6050;
-extern u8 mpu6050_ok;	// =1 正常
-						// =0 错误
 
-void I2C_MPU6050_ByteWrite(u8 pBuffer, u8 WriteAddr);
-void I2C_MPU6050_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead);
 
+//*******************函数*******************************
 int MPU6050_Init(u16 lpf);
-
 void MPU6050_Read(MPU6050_STRUCT * mpu6050);
 void MPU6050_Data_Prepare(float T);
 
+
+
 // MPU6050, Standard address 0x68
+
+
+
+//************************************************************************************
+//								参考寄存器地址
+//************************************************************************************
+
 #define MPU6050_ADDRESS         0x68
 #define MPU6050_WHO_AM_I        0x75
 #define MPU6050_SMPLRT_DIV      0  //8000Hz
 #define MPU6050_DLPF_CFG        0
 #define MPU6050_GYRO_OUT        0x43     //MPU6050陀螺仪数据寄存器地址
 #define MPU6050_ACC_OUT         0x3B     //MPU6050加速度数据寄存器地址
-
-//#define MPU6050_SLAVE_ADDRESS		0xd0      //MPU6050器件读地址  定义在bsp_mpu6050.c里面
-//#define MPU6050_SLAVE_ADDRESS		0x68
-
-#define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
-#define MPU6050_ADDRESS_AD0_HIGH    0x69 // address pin high (VCC)
-#define MPU6050_DEFAULT_ADDRESS     MPU6050_ADDRESS_AD0_LOW
 
 #define MPU6050_RA_XG_OFFS_TC       0x00 //[7] PWR_MODE, [6:1] XG_OFFS_TC, [0] OTP_BNK_VLD
 #define MPU6050_RA_YG_OFFS_TC       0x01 //[7] PWR_MODE, [6:1] YG_OFFS_TC, [0] OTP_BNK_VLD
@@ -392,10 +389,5 @@ void MPU6050_Data_Prepare(float T);
 #define MPU6050_DMP_MEMORY_BANK_SIZE    256
 #define MPU6050_DMP_MEMORY_CHUNK_SIZE   16
 
+
 #endif /* __BSP_MPU6050_H */
-
-//void MPU6050ReadAcc(mpu6050_3D *accData);
-//void MPU6050ReadGyro(mpu6050_3D *gyroData);
-//void MPU6050ReadTemp(short *tempData);
-//void MPU6050_ReturnTemp(short*Temperature);
-

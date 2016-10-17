@@ -15,7 +15,6 @@
 ..\..\output\main.o: ..\..\User\include.h
 ..\..\output\main.o: ..\..\User\usart\bsp_usart1.h
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\..\output\main.o: ..\..\User\i2c\bsp_i2c.h
 ..\..\output\main.o: ..\..\User\SysTick\bsp_SysTick.h
 ..\..\output\main.o: ..\..\User\scheduler.h
 ..\..\output\main.o: ..\..\User\mpu6050\bsp_mpu6050.h

@@ -45,9 +45,9 @@ void Attitude_sensor_Update(u32 T)
 	
 	//把mpu6050_output赋值到Gyro
 	//这些赋值都是float型的
-	Gyro_mpu6050_out.x = mpu6050_output.Gyro_f_g.x;
-	Gyro_mpu6050_out.y = mpu6050_output.Gyro_f_g.y;
-	Gyro_mpu6050_out.z = mpu6050_output.Gyro_f_g.z;
+	Gyro_mpu6050_out.x = -mpu6050_output.Gyro_f_g.x;
+	Gyro_mpu6050_out.y = -mpu6050_output.Gyro_f_g.y;
+	Gyro_mpu6050_out.z = -mpu6050_output.Gyro_f_g.z;
 	
 	Accel.x = mpu6050_output.Acc_f_g.x;
 	Accel.y = mpu6050_output.Acc_f_g.y;

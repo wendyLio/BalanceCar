@@ -46,6 +46,8 @@ void USART1_Config(void)
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 	
 	USART_Cmd(USART1, ENABLE);
+	
+	printf("USART1初始化完成\n");
 }
 
 /// 配置USART1接收中断

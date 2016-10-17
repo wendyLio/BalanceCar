@@ -16,7 +16,7 @@ loop_t loop;
 //systick控制的等待函数，停止所有任务，进行等待
 //此函数只在systick初始化后有效
 int delay_ms_counter = 0;
-void Delay_ms(int nms)
+void Delay_ms(u32 nms)
 {
 	delay_ms_counter = nms;
 	while(delay_ms_counter);
@@ -24,7 +24,7 @@ void Delay_ms(int nms)
 
 void Loop_check(void)  //TIME INTTERRUPT
 {
-	if(delay_ms_counter != 0)
+	if(delay_ms_counter >= 0)
 	{
 		delay_ms_counter--;
 	}
@@ -46,11 +46,6 @@ void Loop_check(void)  //TIME INTTERRUPT
 		}
 		
 		loop.check_flag = 1;
-		
-		//这句话应该不会起作用，算是增强鲁棒性吧
-		//如果delay_ms_counter<0了，整个延时逻辑就出大问题了
-		if(delay_ms_counter < 0)
-			delay_ms_counter = 0;
 	}
 }
 
@@ -112,15 +107,25 @@ void Duty_2ms(void)
 {
 	u32 T = 2;
 	Attitude_sensor_Read(T);
+	
 }
 
 void Duty_5ms(void)
 {
+	static int i = 0;
 	u32 T = 5;
+	
 	Attitude_sensor_Update(T);
 	
 	//测试输出，测试数据采样和运算结果的正确性
-	printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
+	i++;
+	if(i>7)
+	{
+		i = 0;
+//		printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
+		printf("G:%f	Angle:%f\n",Gyro.y,Angle.y);
+	}
+
 	
 	//在理论上，PID的算法调用频率应该小于等于传感器更新速率
 	Balance_Control(Angle.y,Gyro.y,0.0);

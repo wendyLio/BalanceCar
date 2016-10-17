@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "init.h"
+#include "ioi2c.h"
 
 
 u8 All_Init(void)
@@ -10,7 +11,10 @@ u8 All_Init(void)
 	USART1_Config();		//USART1 配置模式为 115200 8-N-1，中断接收
 	NVIC_Configuration();
 	
-	I2C_1_Init();	//初始化I2C1 这个IC2是连接在板上的eeprom上的，但只要不访问eeprom的地址，就可以照常使用
+//硬件iic初始化函数，弃用
+//	I2C_1_Init();	//初始化I2C1 这个IC2是连接在板上的eeprom上的，但只要不访问eeprom的地址，就可以照常使用
+	
+	IIC_Init();
 	
 	Loop_Init();		//循环控制变量初始化
 	SysTick_Init();		//滴答定时器初始化，1ms中断周期
