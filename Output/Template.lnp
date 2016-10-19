@@ -11,6 +11,7 @@
 "..\..\output\movement_control.o"
 "..\..\output\init.o"
 "..\..\output\bsp_usart1.o"
+"..\..\output\bsp_usart2.o"
 "..\..\output\bsp_systick.o"
 "..\..\output\bsp_mpu6050.o"
 "..\..\output\bsp_encoder.o"

@@ -15,6 +15,8 @@ int main(void)
 	
 	if(init_error)
 		printf("硬件初始化存在问题\n");	
+	else
+		printf("硬件初始化正常\n");	
 
 	while (1)
 	{	 

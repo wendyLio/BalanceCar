@@ -188,3 +188,15 @@ void IICwriteBit(u8 dev, u8 reg, u8 bitNum, u8 data){
 
 Accel_To_Angle内改用角度制
 
+发现mpu6050在上电后直接初始化返回数据是0,在初始化前加200ms延时解决问题
+
+增加串口2驱动，开串口2接收中断，但没有转接printf函数，printf函数还在usart1上
+
+在All_Init函数里统一配置中断优先级分组方式
+
+调整All_Init函数结构
+
+
+
+
+

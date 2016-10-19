@@ -28,7 +28,7 @@ void Data_Analyze(void)
 }
 
 //此函数在中断中调用
-void Usart1_Receive_Handle(u8 ch)
+void Receive_Handle(u8 ch)
 {
 	/*
 		由于STM32的串口是8位口（配置为8位口），u32的变量无法一次性发送，用ascii码发送接收还涉及到解码问题，

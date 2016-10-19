@@ -143,11 +143,7 @@ void SysTick_Handler(void)
 }
 
 
-void  TIM4_IRQHandler (void)
-{
-	 	 TIM_ClearFlag(TIM7, TIM_FLAG_Update);	
-	     go_onflag=1;
-}
+
 
 
 /******************************************************************************/

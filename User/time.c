@@ -36,6 +36,11 @@ void delay_us(u32 us)
 	Delay_Us(us);   
 }
 
+void delay_ms(u32 ms)
+{
+	Delay_Ms(ms);   
+}
+
 
 void TIM7_Configuration(void)
 {
@@ -58,6 +63,12 @@ void TIM7_Configuration(void)
 	TIM_ARRPreloadConfig(TIM4,DISABLE);
 	TIM_ITConfig(TIM4,TIM_IT_Update,ENABLE);
 	TIM_Cmd(TIM4, DISABLE);
+}
+
+void TIM4_IRQHandler (void)
+{
+	 TIM_ClearFlag(TIM7, TIM_FLAG_Update);	
+	 go_onflag=1;
 }
 
 void Delay(int delaytime)

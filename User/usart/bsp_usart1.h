@@ -5,9 +5,7 @@
 #include <stdio.h>
 
 void USART1_Config(void);
-void NVIC_Configuration(void);
-int fputc(int ch, FILE *f);
-int fgetc(FILE *f);
+void NVIC_USART1_Configuration(void);
 void printf_test(void);
 
 #endif /* __USART1_H */

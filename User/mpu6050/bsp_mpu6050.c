@@ -111,15 +111,6 @@ void MPU6050_setI2CBypassEnabled(uint8_t enabled) {
 	IICwriteBit(MPU6050_SLAVE_ADDRESS, MPU6050_RA_INT_PIN_CFG, MPU6050_INTCFG_I2C_BYPASS_EN_BIT, enabled);
 }
 
-
-
-
-
-
-
-
-
-
 //*********************************************************************************************************
 //							应用函数
 //*********************************************************************************************************
@@ -164,6 +155,8 @@ int MPU6050_Init(u16 lpf)
 		break;
 	}
 
+	delay_ms(200);
+	
 	//设备复位
 //	IIC_Write_1Byte(MPU6050_SLAVE_ADDRESS,MPU6050_RA_PWR_MGMT_1, 0x80);
 	
@@ -186,7 +179,7 @@ int MPU6050_Init(u16 lpf)
 	MPU6050_setI2CBypassEnabled(1);	 //主控制器的I2C与	MPU6050的AUXI2C	直通。控制器可以直接访问HMC5883L
 	Delay_ms(10);
 	
-	return 1;
+	return 0;
 }
 
 

@@ -6,8 +6,13 @@
 extern int go_onflag;
 
 void delay_us(u32 us);
+void delay_ms(u32 ms);
+	
+
 void Delay_Ms(u32 myMs);
 void Delay_Us(u32 myUs);
+
+
 void TIM7_Configuration(void);
 void Delay(int delaytime);
 

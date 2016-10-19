@@ -10,7 +10,7 @@
 #include "data_transfer.h"
 
  /**
-  * @brief  USART1 GPIO 配置,工作模式配置。9600 8-N-1
+  * @brief  USART1 GPIO 配置,工作模式配置。115200 8-N-1
   * @param  无
   * @retval 无
   */
@@ -47,15 +47,19 @@ void USART1_Config(void)
 	
 	USART_Cmd(USART1, ENABLE);
 	
+	//配置串口1对应的中断向量
+	NVIC_USART1_Configuration();
+	
 	printf("USART1初始化完成\n");
 }
 
 /// 配置USART1接收中断
-void NVIC_Configuration(void)
+void NVIC_USART1_Configuration(void)
 {
 	NVIC_InitTypeDef NVIC_InitStructure; 
+	
 	/* Configure the NVIC Preemption Priority Bits */  
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+//	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
 	
 	/* Enable the USARTy Interrupt */
 	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;	 
@@ -98,8 +102,11 @@ void USART1_IRQHandler(void)
 //			ch = USART_ReceiveData(USART1);
 //	  	printf( "%c", ch );    //将接受到的数据直接返回打印
 		
+//		//我觉得这个地方应该用USART_SendData，在printf不能用时依然有效
+//		USART_SendData(USART1, (uint8_t) ch);
+		
 		ch = USART_ReceiveData(USART1);
-		Usart1_Receive_Handle(ch);
+		Receive_Handle(ch);
 	} 
 }
 

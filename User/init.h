@@ -3,7 +3,9 @@
 
 #include "stm32f10x.h"
 #include "include.h"
+
 #include "bsp_usart1.h"
+#include "bsp_usart2.h"
 #include "bsp_SysTick.h"
 #include "scheduler.h"
 #include "bsp_mpu6050.h"
