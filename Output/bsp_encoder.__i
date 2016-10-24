@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\SysTick -I ..\..\User\mpu6050 -I ..\..\User\kalman -I ..\..\User\encoder -I ..\..\User\pwm_out -I ..\..\User\IIC
+-I"C:\Users\liuha\Desktop\平衡小车制作\3.5版本工程文件 改自野火ISO例程\平衡车\Project\RVMDK（uv4）\RTE"
+-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include
+-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
+-o ..\..\output\bsp_encoder.o --omf_browse ..\..\output\bsp_encoder.crf --depend ..\..\output\bsp_encoder.d "..\..\User\encoder\bsp_encoder.c"

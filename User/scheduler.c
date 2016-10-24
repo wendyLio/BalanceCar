@@ -13,40 +13,24 @@ void Duty_50ms(void);
 
 loop_t loop;
 
-//systick控制的等待函数，停止所有任务，进行等待
-//此函数只在systick初始化后有效
-int delay_ms_counter = 0;
-void Delay_ms(u32 nms)
-{
-	delay_ms_counter = nms;
-	while(delay_ms_counter);
-}
-
 void Loop_check(void)  //TIME INTTERRUPT
 {
-	if(delay_ms_counter >= 0)
+	//这个写法其实并不节省时间，但好在都是整数操作，应该比较快
+	//如果时间不够了可以把这部分改掉，有比这个简单得多的写法
+	//用单一计数器变量+取余数的方法就行
+	loop.cnt_2ms++;
+	loop.cnt_5ms++;
+	loop.cnt_10ms++;
+	loop.cnt_20ms++;
+	loop.cnt_50ms++;
+	
+	if(loop.check_flag == 1)	//如果到这里check_flag到这里还是1，没有被清0，
+								//证明主循环里面1ms的任务没有运行完，最后面的check_flag没有运行到
 	{
-		delay_ms_counter--;
+		loop.error_flag++;		//每次出现问题，error_flag+1
 	}
-	else
-	{
-		//这个写法其实并不节省时间，但好在都是整数操作，应该比较快
-		//如果时间不够了可以把这部分改掉，有比这个简单得多的写法
-		//用单一计数器变量+取余数的方法就行
-		loop.cnt_2ms++;
-		loop.cnt_5ms++;
-		loop.cnt_10ms++;
-		loop.cnt_20ms++;
-		loop.cnt_50ms++;
-		
-		if(loop.check_flag == 1)	//如果到这里check_flag到这里还是1，没有被清0，
-									//证明主循环里面1ms的任务没有运行完，最后面的check_flag没有运行到
-		{
-			loop.error_flag++;		//每次出现问题，error_flag+1
-		}
-		
-		loop.check_flag = 1;
-	}
+	
+	loop.check_flag = 1;
 }
 
 void Loop_Init(void)
@@ -149,4 +133,20 @@ void Duty_50ms(void)
 	
 }
 
+////systick控制的等待函数，停止所有任务，进行等待
+////此函数只在systick初始化后有效
+//int delay_ms_counter = 0;
+//void Delay_ms(u32 nms)
+//{
+//	delay_ms_counter = nms;
+//	while(delay_ms_counter);
+//}
 
+//	if(delay_ms_counter >= 0)
+//	{
+//		delay_ms_counter--;
+//	}
+//	else
+//	{
+
+//	}

@@ -196,7 +196,65 @@ Accel_To_Angle内改用角度制
 
 调整All_Init函数结构
 
+弃用以systick为计时器的Delay_ms()函数，延时改用以while循环方式实现的Delay_Ms()和Delay_Us()
+后期逐步开始使用基于timer的延时函数
 
+车轮转向控制部分还没有写完， 引脚选用还没有经过检查
+
+
+后续工作：
+1.确定Timer使用情况
+2.确定GPIO使用情况
+
+定时器：
+C8：3个通用定时器，1个高级定时器
+ZE：4个通用定时器，2个高级定时器，1个基本定时器
+
+GPIO：
+C8：PA0-15
+	PB0-15
+	PC13-15
+	
+	USART1 TX PA9
+		   RX PA10
+	
+	USART2 TX PA2
+		   Rx PA3
+	
+	USART3 TX PB10
+		   RX PB11
+		   
+	Soft_IIC PB8
+		     PB9
+	
+	输出：
+	Timer3 CH3 PB0 
+		   CH4 PB1
+		   
+	输入：
+	Timer1 CH1 PA8
+	Timer3 CH1 PA6
+	
+	延时：
+	Timer4
+	
+	系统时间测量
+	Timer2
+	
+	电机控制：
+	PA1
+	PA2
+	PA3
+	PA4
+	
+10.20
+初步制作了电机控制函数，但存在输入变量为s32型，但是pwm输出只支持u16的问题，此处可能导致数值溢出
+PWM输出函数里面设置的最大计数值为1000，不知道1000是不是最大计数值
+
+Get_Speed里缺少含有物理意义的单位换算
+	
+	
+		   
 
 
 

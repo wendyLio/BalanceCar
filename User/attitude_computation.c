@@ -28,7 +28,7 @@ void Attitude_Init(void)
 	Angle_estimate.y = 0.0;
 	Angle_estimate.z = 0.0;
 	
-	Kanman_Init(&atti_x);
+	Kanman_Init(&atti_x);	//初始化卡尔曼结构体
 	Kanman_Init(&atti_y);
 }
 

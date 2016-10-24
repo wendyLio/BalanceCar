@@ -2,6 +2,8 @@
 #include "init.h"
 #include "ioi2c.h"
 #include "bsp_usart2.h"
+#include "time.h"
+#include "bsp_Timer_In_Out.h"
 
 
 u8 All_Init(void)
@@ -9,17 +11,20 @@ u8 All_Init(void)
 	int init_error = 0;	//初始化错误返回，如果初始化存在错误，就将此变量置1
 						//主要用在初始化外部设备（比如MPU6050）时，检查外部设备是否正常工作
 	
-	//中断向量控制器优先级分组配置
 	/* Configure the NVIC Preemption Priority Bits */  
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+	
+	Time_Configuration();	//系统时间和延时相关定时器初始化
 	
 	USART1_Config();		//USART1 配置模式为 115200 8-N-1，中断接收
 	USART2_Config();
 	
-	IIC_Init();
+	IIC_Init();	//软件IIC初始化
 	
 	init_error = mpu6050_init(5);	//MPU6050的初始化，要放在systick调度的后面，因为其中调用了延时函数
 									//此函数的入参是对mpu6050内部数字低通滤波器的频带宽度设置，输入0代表关闭内部低通滤波器
+	
+	TIM_Input_Output_Configuration();	//码盘与PWM输出初始化
 	
 	Attitude_Init();	//初始化姿态相关变量
 	

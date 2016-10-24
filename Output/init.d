@@ -25,3 +25,5 @@
 ..\..\output\init.o: ..\..\User\kalman\kalman.h
 ..\..\output\init.o: ..\..\User\control.h
 ..\..\output\init.o: ..\..\User\IIC\ioi2c.h
+..\..\output\init.o: ..\..\User\time.h
+..\..\output\init.o: ..\..\User\Timer_In_Out\bsp_Timer_In_Out.h

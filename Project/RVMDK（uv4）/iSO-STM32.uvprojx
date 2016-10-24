@@ -469,19 +469,14 @@
               <FilePath>..\..\User\mpu6050\bsp_mpu6050.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\encoder\bsp_encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_pwm_out.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\pwm_out\bsp_pwm_out.c</FilePath>
-            </File>
-            <File>
               <FileName>IOI2C.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_Timer_In_Out.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\Timer_In_Out\bsp_Timer_In_Out.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -994,7 +989,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\mpu6050;..\..\User\kalman;..\..\User\encoder;..\..\User\pwm_out;..\..\User\IIC</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\mpu6050;..\..\User\kalman;..\..\User\IIC;..\..\User\Timer_In_Out</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1129,19 +1124,14 @@
               <FilePath>..\..\User\mpu6050\bsp_mpu6050.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\encoder\bsp_encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_pwm_out.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\pwm_out\bsp_pwm_out.c</FilePath>
-            </File>
-            <File>
               <FileName>IOI2C.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_Timer_In_Out.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\Timer_In_Out\bsp_Timer_In_Out.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -12,7 +12,6 @@
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\misc.h
-..\..\output\movement_control.o: ..\..\User\pwm_out\bsp_pwm_out.h
-..\..\output\movement_control.o: ..\..\User\encoder\bsp_encoder.h
+..\..\output\movement_control.o: ..\..\User\Timer_In_Out\bsp_Timer_In_Out.h
 ..\..\output\movement_control.o: ..\..\User\include.h
 ..\..\output\movement_control.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

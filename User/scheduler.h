@@ -24,6 +24,6 @@ void Loop_Init(void);
 void Loop_check(void);
 void Duty_Loop(void);
 
-void Delay_ms(u32 nms);
+//void Delay_ms(u32 nms);
 
 #endif /* __SCHEDULER_H */
