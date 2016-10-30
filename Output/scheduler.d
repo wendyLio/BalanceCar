@@ -21,3 +21,4 @@
 ..\..\output\scheduler.o: ..\..\User\control.h
 ..\..\output\scheduler.o: ..\..\User\movement_control.h
 ..\..\output\scheduler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\scheduler.o: ..\..\User\time.h

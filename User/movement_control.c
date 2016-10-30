@@ -4,7 +4,7 @@
 
 u8 Direction_Left = 0,Rirection_Right = 0;
 
-void Movement_Init()
+void Movement_Init(void)
 {
 	//³õÊ¼»¯¿ØÖÆµç»ú×ªÏòµÄ4¸öGPIO 	(GPIOA_Pin_1 GPIOA_Pin_2 GPIOA_Pin_3 GPIOA_Pin_4)
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -22,6 +22,7 @@ void Movement_Init()
 //Í£Ö¹:IN1 0 IN2 0
 void Left_Wheel_Movement(u8 direction,u16 speed) //0 Í£Ö¹ 1Ç°½ø 2ºóÍË    speedÈ¡Öµ0-1000
 {
+	direction = 1;
 	if(direction == 0)
 	{
 		GPIO_ResetBits(GPIOA, GPIO_Pin_1);
@@ -42,11 +43,13 @@ void Left_Wheel_Movement(u8 direction,u16 speed) //0 Í£Ö¹ 1Ç°½ø 2ºóÍË    speedÈ¡
 		
 	}
 	
+	speed = 500;
 	LC_CHG(speed);   //FÎªÐèÆµÂÊ CÎªÕ¼¿Õ±È ÈçF=2000£¬CÈ¡Öµ0-1000
 }
 
 void Right_Wheel_Movement(u8 direction,u16 speed) //0 Í£Ö¹ 1Ç°½ø 2ºóÍË    speedÈ¡Öµ0-1000
 {
+	direction = 1;
 	if(direction == 0)
 	{
 		GPIO_ResetBits(GPIOA, GPIO_Pin_3);
@@ -67,10 +70,11 @@ void Right_Wheel_Movement(u8 direction,u16 speed) //0 Í£Ö¹ 1Ç°½ø 2ºóÍË    speedÈ
 		
 	}
 	
+	speed = 500;
 	RC_CHG(speed);
 }
 
-void Speed_InPut(s32 Speed_Left,s32 Speed_Right)
+void Speed_OutPut(s32 Speed_Left,s32 Speed_Right)
 {
 	//³µÂÖ×ªÏòÅÐ¶Ï
 	if(Speed_Left > 0)

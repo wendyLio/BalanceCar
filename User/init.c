@@ -4,6 +4,7 @@
 #include "bsp_usart2.h"
 #include "time.h"
 #include "bsp_Timer_In_Out.h"
+#include "movement_control.h"
 
 
 u8 All_Init(void)
@@ -29,6 +30,8 @@ u8 All_Init(void)
 	Attitude_Init();	//初始化姿态相关变量
 	
 	Balance_Init();		//自稳变量初始化
+	
+	Movement_Init();	//电机驱动IO初始化
 	
 	//主循环初始化与启动
 	Loop_Init();		//循环控制变量初始化

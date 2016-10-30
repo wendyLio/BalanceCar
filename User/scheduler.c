@@ -3,6 +3,7 @@
 #include "control.h"
 #include "movement_control.h"
 #include "stdio.h"
+#include "time.h"
 
 void Duty_1ms(void);							//周期1ms的任务
 void Duty_2ms(void);
@@ -98,24 +99,40 @@ void Duty_5ms(void)
 {
 	static int i = 0;
 	u32 T = 5;
+	s16 Control_Out_Left;
+	s16 Control_Out_Right;
+	
+	u32 a,b;
 	
 	Attitude_sensor_Update(T);
 	
 	//测试输出，测试数据采样和运算结果的正确性
-	i++;
-	if(i>7)
-	{
-		i = 0;
-//		printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
-		printf("G:%f	Angle:%f\n",Gyro.y,Angle.y);
-	}
+//	i++;
+//	if(i>7)
+//	{
+//		i = 0;
+////		printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
+////		printf("G:%f	Angle:%f\n",Gyro.y,Angle.y);
+//	}
 
-	
 	//在理论上，PID的算法调用频率应该小于等于传感器更新速率
-	Balance_Control(Angle.y,Gyro.y,0.0);
+	Balance_Control(Angle.y,Gyro.y,&Control_Out_Left,&Control_Out_Right,0.0f);
 	
 	//将控制输出数值赋值给电机驱动函数
-	Speed_InPut(Control_Out_Left,Control_Out_Right);
+	Speed_OutPut(Control_Out_Left,Control_Out_Right);
+	
+//	Get_Speed(&a,&b);
+	a = readnowtime();
+	
+//	printf("a:%d	b:%d\n",a,b);
+	
+	i++;
+	if(i>20)
+	{
+		i = 0;
+		printf("a:%d\n",a);
+	}
+	
 }
 
 void Duty_10ms(void)

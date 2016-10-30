@@ -15,7 +15,7 @@
 */
 
 u32 kp,kd;
-s32 Control_Out_Left,Control_Out_Right;
+
 
 /*
  * 姿态控制用变量初始化
@@ -44,10 +44,10 @@ void Balance_Init(void)
  * 			Expect_Angle_y 	y轴期望倾角
  *
  */
-void Balance_Control(float Angle_y,float Gyro_y,float Expect_Angle_y)
+void Balance_Control(float Angle_y,float Gyro_y,s16 *Control_Out_Left,s16 *Control_Out_Right,float Expect_Angle_y)
 {
 	float error_y;
-	s32 balance_y;
+	s16 balance_y;
 	
 	error_y = Angle_y - Expect_Angle_y;	//这两个变量哪个先哪个后以后再说，测试时就知道了
 	
@@ -55,8 +55,8 @@ void Balance_Control(float Angle_y,float Gyro_y,float Expect_Angle_y)
 	balance_y = kp * error_y + kd * Gyro_y;	//这个d前面的符号的正负也以后再说
 	
 	//赋值给控制输出变量
-	Control_Out_Left = balance_y;
-	Control_Out_Right = balance_y;
+	*Control_Out_Left = balance_y;
+	*Control_Out_Right = balance_y;
 }
 
 
