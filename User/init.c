@@ -3,8 +3,10 @@
 #include "ioi2c.h"
 #include "bsp_usart2.h"
 #include "time.h"
-#include "bsp_Timer_In_Out.h"
+#include "bsp_encoder.h"
+#include "bsp_motor.h"
 #include "movement_control.h"
+#include "bsp_led.h"
 
 
 u8 All_Init(void)
@@ -17,6 +19,8 @@ u8 All_Init(void)
 	
 	Time_Configuration();	//系统时间和延时相关定时器初始化
 	
+	LED_GPIO_Config();
+	
 	USART1_Config();		//USART1 配置模式为 115200 8-N-1，中断接收
 	USART2_Config();
 	
@@ -25,13 +29,12 @@ u8 All_Init(void)
 	init_error = mpu6050_init(5);	//MPU6050的初始化，要放在systick调度的后面，因为其中调用了延时函数
 									//此函数的入参是对mpu6050内部数字低通滤波器的频带宽度设置，输入0代表关闭内部低通滤波器
 	
-	TIM_Input_Output_Configuration();	//码盘与PWM输出初始化
+	Encoder_Configuration();	//码盘初始化
+	Motor_Init();				//电机初始化
 	
 	Attitude_Init();	//初始化姿态相关变量
 	
 	Balance_Init();		//自稳变量初始化
-	
-	Movement_Init();	//电机驱动IO初始化
 	
 	//主循环初始化与启动
 	Loop_Init();		//循环控制变量初始化

@@ -474,9 +474,19 @@
               <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_Timer_In_Out.c</FileName>
+              <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\User\Timer_In_Out\bsp_Timer_In_Out.c</FilePath>
+              <FilePath>..\..\User\LED\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\motor\bsp_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\encoder\bsp_encoder.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -652,6 +662,11 @@
               <FileName>cache.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\User\cache.txt</FilePath>
+            </File>
+            <File>
+              <FileName>官方例程IO.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\官方例程IO.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -989,7 +1004,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\mpu6050;..\..\User\kalman;..\..\User\IIC;..\..\User\Timer_In_Out</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\mpu6050;..\..\User\kalman;..\..\User\IIC;..\..\User\encoder;..\..\User\LED;..\..\User\motor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1129,9 +1144,19 @@
               <FilePath>..\..\User\IIC\IOI2C.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_Timer_In_Out.c</FileName>
+              <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\User\Timer_In_Out\bsp_Timer_In_Out.c</FilePath>
+              <FilePath>..\..\User\LED\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\motor\bsp_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\encoder\bsp_encoder.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1307,6 +1332,11 @@
               <FileName>cache.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\User\cache.txt</FilePath>
+            </File>
+            <File>
+              <FileName>官方例程IO.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\官方例程IO.txt</FilePath>
             </File>
           </Files>
         </Group>

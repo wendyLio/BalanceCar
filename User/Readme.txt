@@ -252,7 +252,17 @@ C8：PA0-15
 PWM输出函数里面设置的最大计数值为1000，不知道1000是不是最大计数值
 
 Get_Speed里缺少含有物理意义的单位换算
-	
+
+11.1
+对IO端口进行官方例程匹配
+
+完成电机控制的4个引脚配置为
+AIN2:GPIOB 15
+AIN1:GPIOB 14
+BIN1:GPIOB 13
+BIN2:GPIOB 12
+
+把 movement_control、Timer_In_Out 拆成 bsp_motor、bsp_encoder、movement_control。
 	
 		   
 

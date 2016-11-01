@@ -26,5 +26,7 @@
 ..\..\output\init.o: ..\..\User\control.h
 ..\..\output\init.o: ..\..\User\IIC\ioi2c.h
 ..\..\output\init.o: ..\..\User\time.h
-..\..\output\init.o: ..\..\User\Timer_In_Out\bsp_Timer_In_Out.h
+..\..\output\init.o: ..\..\User\encoder\bsp_encoder.h
+..\..\output\init.o: ..\..\User\motor\bsp_motor.h
 ..\..\output\init.o: ..\..\User\movement_control.h
+..\..\output\init.o: ..\..\User\LED\bsp_led.h
