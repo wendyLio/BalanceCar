@@ -263,6 +263,9 @@ BIN1:GPIOB 13
 BIN2:GPIOB 12
 
 °Ñ movement_control¡¢Timer_In_Out ²ð³É bsp_motor¡¢bsp_encoder¡¢movement_control¡£
+
+
+123456
 	
 		   
 
