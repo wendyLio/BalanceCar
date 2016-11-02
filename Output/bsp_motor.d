@@ -5,8 +5,9 @@
 ..\..\output\bsp_motor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\bsp_motor.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\bsp_motor.o: ..\..\User\stm32f10x_conf.h
-..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\bsp_motor.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\bsp_motor.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

@@ -5,8 +5,9 @@
 ..\..\output\data_transfer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\data_transfer.o: ..\..\User\stm32f10x_conf.h
-..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\data_transfer.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\data_transfer.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

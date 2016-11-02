@@ -5,8 +5,9 @@
 ..\..\output\kalman.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\kalman.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\kalman.o: ..\..\User\stm32f10x_conf.h
-..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\kalman.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\kalman.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

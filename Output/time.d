@@ -5,8 +5,9 @@
 ..\..\output\time.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\time.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\time.o: ..\..\User\stm32f10x_conf.h
-..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\time.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\time.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

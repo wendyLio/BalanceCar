@@ -18,6 +18,7 @@
 "..\..\output\bsp_led.o"
 "..\..\output\bsp_motor.o"
 "..\..\output\bsp_encoder.o"
+"..\..\output\bsp_key.o"
 "..\..\output\startup_stm32f10x_hd.o"
 "..\..\output\core_cm3.o"
 "..\..\output\system_stm32f10x.o"

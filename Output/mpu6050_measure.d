@@ -5,8 +5,9 @@
 ..\..\output\mpu6050_measure.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\mpu6050_measure.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\mpu6050_measure.o: ..\..\User\stm32f10x_conf.h
-..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\mpu6050_measure.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\mpu6050_measure.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

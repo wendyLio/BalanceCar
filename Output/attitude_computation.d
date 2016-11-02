@@ -5,8 +5,9 @@
 ..\..\output\attitude_computation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\attitude_computation.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\attitude_computation.o: ..\..\User\stm32f10x_conf.h
-..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\attitude_computation.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\attitude_computation.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h

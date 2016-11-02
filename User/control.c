@@ -39,9 +39,11 @@ void Balance_Init(void)
  *
  * 为了方便系统计算，姿态变量Angle和Gyro都用s32型变量处理
  *
- * 传入参数 Angle_y 		y轴倾角
- *			Gyro_y			y轴角速度
- * 			Expect_Angle_y 	y轴期望倾角
+ * 传入参数 Angle_y 			y轴倾角
+ *			Gyro_y				y轴角速度
+ * 			Expect_Angle_y 		y轴期望倾角
+ * 传出参数 Control_Out_Left	左轮速度控制量	+1000 ~ -1000
+ *          Control_Out_Right	右轮速度控制量	+1000 ~ -1000
  *
  */
 void Balance_Control(float Angle_y,float Gyro_y,s16 *Control_Out_Left,s16 *Control_Out_Right,float Expect_Angle_y)

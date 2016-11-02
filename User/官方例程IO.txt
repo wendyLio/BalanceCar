@@ -75,3 +75,9 @@ PA2
 PA3
 PA4
 
+LED：
+GPIOC 13
+
+Key：
+GPIOA 0
+

@@ -91,48 +91,19 @@ void Duty_1ms(void)
 void Duty_2ms(void)
 {
 	u32 T = 2;
-	Attitude_sensor_Read(T);
-	
+	Attitude_sensor_Read(T);	//读取数据，低通滤波
 }
 
 void Duty_5ms(void)
 {
-	static int i = 0;
+//	static int i = 0;
 	u32 T = 5;
 	s16 Control_Out_Left;
 	s16 Control_Out_Right;
 	
-	u32 a,b;
-	
-	Attitude_sensor_Update(T);
-	
-	//测试输出，测试数据采样和运算结果的正确性
-//	i++;
-//	if(i>7)
-//	{
-//		i = 0;
-////		printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
-////		printf("G:%f	Angle:%f\n",Gyro.y,Angle.y);
-//	}
-
-	//在理论上，PID的算法调用频率应该小于等于传感器更新速率
-	Balance_Control(Angle.y,Gyro.y,&Control_Out_Left,&Control_Out_Right,0.0f);
-	
-	//将控制输出数值赋值给电机驱动函数
-	Speed_OutPut(Control_Out_Left,Control_Out_Right);
-	
-//	Get_Speed(&a,&b);
-	a = readnowtime();
-	
-//	printf("a:%d	b:%d\n",a,b);
-	
-	i++;
-	if(i>20)
-	{
-		i = 0;
-		printf("a:%d\n",a);
-	}
-	
+	Attitude_sensor_Update(T);	//姿态数据更新
+	Balance_Control(Angle.y,Gyro.y,&Control_Out_Left,&Control_Out_Right,0.0f);	//平衡PID控制
+	Speed_OutPut(Control_Out_Left,Control_Out_Right);	//将控制输出数值赋值给电机驱动函数
 }
 
 void Duty_10ms(void)
@@ -150,20 +121,25 @@ void Duty_50ms(void)
 	
 }
 
-////systick控制的等待函数，停止所有任务，进行等待
-////此函数只在systick初始化后有效
-//int delay_ms_counter = 0;
-//void Delay_ms(u32 nms)
-//{
-//	delay_ms_counter = nms;
-//	while(delay_ms_counter);
-//}
 
-//	if(delay_ms_counter >= 0)
+//	u32 a,b;
+
+	//测试输出，测试数据采样和运算结果的正确性
+//	i++;
+//	if(i>7)
 //	{
-//		delay_ms_counter--;
+//		i = 0;
+////		printf("GYRO:%f %f %f; Angle:%f %f %f\n",Gyro.x,Gyro.y,Gyro.z,Angle.x,Angle.y,Angle.z);
+////		printf("G:%f	Angle:%f\n",Gyro.y,Angle.y);
 //	}
-//	else
-//	{
 
+//	printf("a:%d	b:%d\n",a,b);
+
+//	Get_Speed(&a,&b);
+//	a = readnowtime();
+//	i++;
+//	if(i>20)
+//	{
+//		i = 0;
+//		printf("a:%d\n",a);
 //	}

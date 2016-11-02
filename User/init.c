@@ -7,6 +7,7 @@
 #include "bsp_motor.h"
 #include "movement_control.h"
 #include "bsp_led.h"
+#include "bsp_key.h"
 
 
 u8 All_Init(void)
@@ -20,6 +21,7 @@ u8 All_Init(void)
 	Time_Configuration();	//系统时间和延时相关定时器初始化
 	
 	LED_GPIO_Config();
+	EXTI_PA0_Config();
 	
 	USART1_Config();		//USART1 配置模式为 115200 8-N-1，中断接收
 	USART2_Config();

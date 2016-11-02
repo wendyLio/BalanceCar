@@ -4,8 +4,9 @@
 ..\..\output\init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\init.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\init.o: ..\..\User\stm32f10x_conf.h
-..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\init.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\init.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
@@ -30,3 +31,4 @@
 ..\..\output\init.o: ..\..\User\motor\bsp_motor.h
 ..\..\output\init.o: ..\..\User\movement_control.h
 ..\..\output\init.o: ..\..\User\LED\bsp_led.h
+..\..\output\init.o: ..\..\User\Key\bsp_key.h

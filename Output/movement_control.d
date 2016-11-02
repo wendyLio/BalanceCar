@@ -5,8 +5,9 @@
 ..\..\output\movement_control.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\movement_control.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\movement_control.o: ..\..\User\stm32f10x_conf.h
-..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_exti.h
 ..\..\output\movement_control.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_i2c.h
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
 ..\..\output\movement_control.o: ..\..\Libraries\FWlib\inc\stm32f10x_tim.h
